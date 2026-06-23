@@ -1,4 +1,4 @@
-export const SERVER_URL = "http://localhost:3001";
+export const SERVER_URL = "https://castle-siege-pvp-production.up.railway.app";
 
 export const PATH_WAYPOINTS = [
   { x: -17, z: -10 },  // spawn
