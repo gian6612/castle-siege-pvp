@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Castle Siege PvP — Medieval Tower Defense</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚔️</text></svg>" />
+  <style>
+    html, body { margin: 0; padding: 0; background: #0d1a0d; overflow: hidden; }
+    #loading {
+      position: fixed; inset: 0;
+      display: flex; align-items: center; justify-content: center; flex-direction: column;
+      background: #0d1a0d; color: #9ab88a; font-family: Georgia, serif; gap: 16px;
+      z-index: 999;
+    }
+    #loading h2 { color: #f0c040; font-size: 1.8rem; }
+    #loading-bar { width: 200px; height: 6px; background: rgba(255,255,255,0.1); border-radius: 3px; overflow: hidden; }
+    #loading-fill { height: 100%; background: #4a9a3a; border-radius: 3px; animation: load 1.2s ease forwards; }
+    @keyframes load { from { width: 0 } to { width: 100% } }
+  </style>
+</head>
+<body>
+  <div id="loading">
+    <h2>⚔️ Castle Siege PvP</h2>
+    <div id="loading-bar"><div id="loading-fill"></div></div>
+    <p>Loading medieval defenses...</p>
+  </div>
+  <script type="module" src="/src/main.js"></script>
+  <script>
+    // Remove loading screen after modules load
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        const l = document.getElementById('loading');
+        if (l) { l.style.opacity = '0'; l.style.transition = 'opacity 0.4s'; setTimeout(() => l.remove(), 400); }
+      }, 800);
+    });
+  </script>
+</body>
+</html>
